@@ -57,18 +57,26 @@
                 <version>0.0.8</version>
                 <executions>
                     <execution>
-                        <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>
-                                com.floormatt.locationgenerator/com.floormatt.locationgenerator.HelloApplication
-                            </mainClass>
+                            <mainClass>com.floormatt.locationgenerator.HelloApplication</mainClass>
                             <launcher>app</launcher>
-                            <jlinkZipName>app</jlinkZipName>
-                            <jlinkImageName>app</jlinkImageName>
-                            <noManPages>true</noManPages>
-                            <stripDebug>true</stripDebug>
-                            <noHeaderFiles>true</noHeaderFiles>
+                            <!-- jpackage configuration starts here -->
+                            <jpackage>
+                                <!-- produce a Windows exe -->
+                                <type>exe</type>
+                                <!-- your app’s display name -->
+                                <name>LocationGenerator</name>
+                                <!-- match your project version or bump it -->
+                                <appVersion>1.0</appVersion>
+                                <!-- publisher name -->
+                                <vendor>FloorMatt</vendor>
+                                <!-- path to a .ico sitting in src/main/resources -->
+                                <icon>src/main/resources/com/floormatt/locationgenerator/icon.ico</icon>
+                                <!-- remove the console window -->
+                                <winConsole>false</winConsole>
+                            </jpackage>
+                            <!-- jpackage configuration ends here -->
                         </configuration>
                     </execution>
                 </executions>
