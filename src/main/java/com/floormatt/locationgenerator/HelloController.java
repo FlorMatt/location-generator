@@ -3,11 +3,8 @@ package com.floormatt.locationgenerator;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class HelloController {
 
@@ -16,22 +13,23 @@ public class HelloController {
     @FXML private TextField txfld_levels;
     @FXML private TextArea txta_results;
     @FXML private TextArea texta_howTo;
-    @FXML private Button btn_generate;
 
 
     @FXML
     public void initialize() {
         // Optional: show instructions in your “How To” tab
         texta_howTo.setText(
-                "1. Enter your aisle name (e.g. PLOT02)\n" +
-                        "2. Enter number of rows (e.g. 25)\n" +
-                        "3. Enter levels separated by commas (e.g. A,B,C,D)\n" +
-                        "4. Click Generate to see all codes.\n\n" +
-                        "Expected Results:\n" +
-                        "PLOT02-01-A\n" +
-                        "PLOT02-01-B\n" +
-                        "PLOT02-01-C\n" +
-                        "PLOT02-01-D"
+                """
+                        1. Enter your aisle name (e.g. PLOT02)
+                        2. Enter number of rows (e.g. 25)
+                        3. Enter levels separated by commas (e.g. A,B,C,D)
+                        4. Click Generate to see all codes.
+                        
+                        Expected Results:
+                        PLOT02-01-A
+                        PLOT02-01-B
+                        PLOT02-01-C
+                        PLOT02-01-D"""
         );
     }
 
@@ -50,7 +48,7 @@ public class HelloController {
             numRows = Integer.parseInt(numRowsText);
             if (numRows < 1) throw new NumberFormatException();
         } catch (NumberFormatException e) {
-            showAlert("Invalid Input: Number of Rows", "‘Number of Rows’ must be a positive integer.", Alert.AlertType.ERROR);
+            showAlert("Invalid Input: Number of Rows", "‘Number of Rows’ must be a positive integer.");
             return;
         }
 
@@ -60,7 +58,7 @@ public class HelloController {
                 .toList();
 
         if (levels.isEmpty()) {
-            showAlert("Invalid Input: Levels", "Please enter at least one level (e.g. A,B,C).", Alert.AlertType.ERROR);
+            showAlert("Invalid Input: Levels", "Please enter at least one level (e.g. A,B,C).");
             return;
         }
 
@@ -83,8 +81,8 @@ public class HelloController {
     }
 
     //utility to show an alert
-    private void showAlert(String title, String message, Alert.AlertType type) {
-        Alert alert = new Alert(type);
+    private void showAlert(String title, String message) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(title);
         alert.setHeaderText(null);
         alert.setContentText(message);

@@ -7,6 +7,7 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class HelloApplication extends Application {
     @Override
@@ -15,7 +16,7 @@ public class HelloApplication extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
 
         //set the app icon
-        Image icon = new Image(HelloApplication.class.getResourceAsStream("WhsLocationGeneratorIcon.png"));
+        Image icon = new Image(Objects.requireNonNull(HelloApplication.class.getResourceAsStream("WhsLocationGeneratorIcon.png")));
         stage.getIcons().add(icon);
 
         stage.setTitle("Location Generator");
