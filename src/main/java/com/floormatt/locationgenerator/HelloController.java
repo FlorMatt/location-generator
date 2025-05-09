@@ -1,6 +1,5 @@
 package com.floormatt.locationgenerator;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import java.util.Arrays;
@@ -34,7 +33,7 @@ public class HelloController {
     }
 
     @FXML
-    private void generateLocations(ActionEvent event) {
+    private void generateLocations() {
 
         String aisleName = txtfld_aisleName.getText().trim();
         String numRowsText = txtfld_numRows.getText().trim();
