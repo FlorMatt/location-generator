@@ -9,14 +9,14 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Objects;
 
-public class HelloApplication extends Application {
+public class LocationGeneratorApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(LocationGeneratorApplication.class.getResource("location-generator.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
 
         //set the app icon
-        Image icon = new Image(Objects.requireNonNull(HelloApplication.class.getResourceAsStream("WhsLocationGeneratorIcon.png")));
+        Image icon = new Image(Objects.requireNonNull(LocationGeneratorApplication.class.getResourceAsStream("WhsLocationGeneratorIcon.png")));
         stage.getIcons().add(icon);
 
         stage.setTitle("Location Generator");

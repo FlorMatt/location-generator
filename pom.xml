@@ -18,7 +18,7 @@
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
-            <version>21</version>
+            <version>21.0.2</version>
         </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
@@ -59,7 +59,7 @@
                     <execution>
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>com.floormatt.locationgenerator.HelloApplication</mainClass>
+                            <mainClass>com.floormatt.locationgenerator.LocationGeneratorApplication</mainClass>
                             <launcher>app</launcher>
                             <!-- jpackage configuration starts here -->
                             <jpackage>

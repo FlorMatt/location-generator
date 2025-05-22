@@ -5,7 +5,7 @@ import javafx.scene.control.*;
 import java.util.Arrays;
 import java.util.List;
 
-public class HelloController {
+public class LocationGeneratorController {
 
     @FXML private TextField txtfld_aisleName;
     @FXML private TextField txtfld_numRows;
